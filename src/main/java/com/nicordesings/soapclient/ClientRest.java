@@ -6,8 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
-import com.nicordesings.soapclient.GetInformacion;
-import com.nicordesings.soapclient.GetInformacionResponse;
 
 
 public class ClientRest extends WebServiceGatewaySupport {
@@ -26,7 +24,7 @@ public class ClientRest extends WebServiceGatewaySupport {
 		
 		logger.info("Request"  + getInformacion );
 		GetInformacionResponse response = (GetInformacionResponse) getWebServiceTemplate()
-				.marshalSendAndReceive("https://osb.urosario.edu.co/uxxi-URO/Uro_Bpm/Proxies/Uro_Bpm_Ps",getInformacion,
+						.marshalSendAndReceive("https://osb.urosario.edu.co/uxxi-URO/Uro_Bpm/Proxies/Uro_Bpm_Ps",getInformacion,
 						new SoapActionCallback("https://osb.urosario.edu.co/uxxi-URO/Uro_Bpm/Proxies/Uro_Bpm_Ps"));
 		return response;
 		
